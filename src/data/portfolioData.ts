@@ -10,6 +10,13 @@ import mui from "../assets/mui.svg";
 import styled from "../assets/styled.svg";
 import css from "../assets/css.svg";
 import git from "../assets/git.svg";
+import vite from "../assets/vite.svg";
+import webpack from "../assets/webpack.svg";
+import figma from "../assets/figma.svg";
+import vscode from "../assets/vscode.svg";
+import node from "../assets/node.svg";
+import sanity from "../assets/sanity.svg";
+import firebase from "../assets/firebase.svg";
 
 export const portfolioData = {
   personal: {
@@ -45,16 +52,16 @@ export const portfolioData = {
     ],
     tools: [
       { name: "Git", icon: git, level: 100 },
-      { name: "Webpack", icon: "📦", level: 100 },
-      { name: "Vite", icon: "⚡", level: 100 },
-      { name: "Figma", icon: "🎨", level: 100 },
-      { name: "VS Code", icon: "💻", level: 100 },
+      { name: "Webpack", icon: webpack, level: 100 },
+      { name: "Vite", icon: vite, level: 100 },
+      { name: "Figma", icon: figma, level: 100 },
+      { name: "VS Code", icon: vscode, level: 100 },
     ],
     backend: [
-      { name: "Node.js", icon: "🟢", level: 100 },
-      { name: "Express", icon: "🚂", level: 100 },
-      { name: "MongoDB", icon: "🍃", level: 100 },
-      { name: "Firebase", icon: "🔥", level: 100 },
+      { name: "Node.js", icon: node, level: 100 },
+      { name: "Express", icon: express, level: 100 },
+      { name: "Sanity", icon: sanity, level: 100 },
+      { name: "Firebase", icon: firebase, level: 100 },
     ],
   },
 

@@ -1,28 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Heart, ArrowUp } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import React from "react";
+import { motion } from "framer-motion";
+import { Heart, ArrowUp } from "lucide-react";
+import { portfolioData } from "../data/portfolioData";
 
 const Footer: React.FC = () => {
   const { personal } = portfolioData;
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const quickLinks = [
-    { name: 'About', id: 'about' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Contact', id: 'contact' }
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Projects", id: "projects" },
+    { name: "Contact", id: "contact" },
   ];
 
   return (
@@ -39,8 +39,8 @@ const Footer: React.FC = () => {
           >
             <h3 className="text-2xl font-bold">{personal.name}</h3>
             <p className="text-gray-400 dark:text-gray-500 leading-relaxed">
-              Frontend Developer passionate about creating beautiful, 
-              functional web experiences that make a difference.
+              Frontend Developer passionate about creating beautiful, functional
+              web experiences that make a difference.
             </p>
             <div className="flex items-center space-x-2 text-sm text-gray-400 dark:text-gray-500">
               <span>Made with</span>
@@ -89,7 +89,9 @@ const Footer: React.FC = () => {
               >
                 {personal.email}
               </a>
-              <p className="text-gray-400 dark:text-gray-500">{personal.location}</p>
+              <p className="text-gray-400 dark:text-gray-500">
+                {personal.location}
+              </p>
             </div>
             <div className="flex space-x-4 pt-2">
               <motion.a
@@ -113,8 +115,7 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Bottom Section */}
+        {/* Bottom Section
         <div className="border-t border-gray-800 dark:border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <motion.p
             initial={{ opacity: 0 }}
@@ -134,7 +135,7 @@ const Footer: React.FC = () => {
           >
             <ArrowUp className="w-5 h-5" />
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
