@@ -18,6 +18,11 @@ import node from "../assets/node.svg";
 import sanity from "../assets/sanity.svg";
 import firebase from "../assets/firebase.svg";
 
+import jibruk from "../assets/images/jibruk.png";
+import arif from "../assets/images/arif.png";
+import fittrack from "../assets/images/fittrack.png";
+import tribe from "../assets/images/tribe.png";
+
 export const portfolioData = {
   personal: {
     name: "Mikiyas Zenebe",
@@ -68,52 +73,48 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "E-Commerce Dashboard",
+      title: "Jibruk E-Commerce",
       description:
-        "A comprehensive admin dashboard for managing e-commerce operations with real-time analytics, inventory management, and order tracking.",
-      image:
-        "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Chart.js", "Firebase"],
+        "Jibruk, an e-commerce website that offers a wide selection of trendy shoes and sport materials for sale.",
+      image: jibruk,
+
+      tech: ["Next.js", "Sanity CMS", "Tailwind CSS", "Stripe"],
       category: "Web App",
-      github: "https://github.com/alexthompson/ecommerce-dashboard",
-      live: "https://ecommerce-dashboard-demo.netlify.app",
-      featured: true,
+      github: "https://github.com/MikiZenebe/Jibruk--Ecommerce",
+      live: "https://jibruk-ecommerce.vercel.app/",
+      featured: false,
     },
     {
       id: 2,
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with drag-and-drop functionality, team collaboration features, and real-time updates.",
-      image:
-        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React", "Redux", "Node.js", "Socket.io", "MongoDB"],
+      title: "Arif Studios",
+      description: "A booking application with stripe payment functionality.",
+      image: arif,
+      tech: ["React", "Redux", "Tailwind CSS"],
       category: "Web App",
-      github: "https://github.com/alexthompson/task-manager",
-      live: "https://task-manager-demo.netlify.app",
+      github: "",
+      live: "https://studio.arifstudios.com/",
       featured: true,
     },
     {
       id: 3,
-      title: "Weather App",
+      title: "Fittness Tracker",
       description:
-        "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["Vue.js", "JavaScript", "CSS3", "Weather API"],
-      category: "Mobile App",
-      github: "https://github.com/alexthompson/weather-app",
-      live: "https://weather-app-demo.netlify.app",
+        "A Fitness Tracker, a user can showcase their fitness routine and track their progress.",
+      image: fittrack,
+      tech: ["React.js", "MUI", "Express", "MongoDB"],
+      category: "Web App",
+      github: "https://github.com/MikiZenebe/Fitness-Tracker",
+      live: "https://miki-fittrack.vercel.app/",
       featured: false,
     },
     {
       id: 4,
-      title: "Portfolio Website",
+      title: "Tribe",
       description:
         "A responsive portfolio website showcasing modern web development techniques with smooth animations and interactive elements.",
-      image:
-        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: tribe,
       tech: ["React", "Framer Motion", "Tailwind CSS", "TypeScript"],
-      category: "Website",
+      category: "Landing Page",
       github: "https://github.com/alexthompson/portfolio",
       live: "https://alexthompson-dev.netlify.app",
       featured: true,

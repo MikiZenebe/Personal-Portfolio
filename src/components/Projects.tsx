@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Star } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Star } from "lucide-react";
+import { portfolioData } from "../data/portfolioData";
 
 const Projects: React.FC = () => {
   const { projects } = portfolioData;
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
-  
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  const categories = [
+    "All",
+    ...Array.from(new Set(projects.map((p) => p.category))),
+  ];
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section
+      id="projects"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -28,7 +35,8 @@ const Projects: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for development
+            Here are some of my recent projects that showcase my skills and
+            passion for development
           </p>
         </motion.div>
 
@@ -48,8 +56,8 @@ const Projects: React.FC = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 activeFilter === category
-                  ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg'
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg"
+                  : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
               }`}
             >
               {category}
@@ -58,11 +66,8 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div 
-          layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence>
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <>
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -84,7 +89,7 @@ const Projects: React.FC = () => {
                     <div className="absolute top-4 left-4">
                       <div className="bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
                         <Star size={12} fill="currentColor" />
-                        <span>Featured</span>
+                        <span>Real World</span>
                       </div>
                     </div>
                   )}
@@ -106,29 +111,29 @@ const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200"
+                        className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200"
                       >
                         <ExternalLink size={20} />
                       </motion.a>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900 px-2 py-1 rounded-full">
                       {project.category}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
                       <span
@@ -142,7 +147,7 @@ const Projects: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </AnimatePresence>
+          </>
         </motion.div>
 
         {filteredProjects.length === 0 && (
@@ -151,7 +156,9 @@ const Projects: React.FC = () => {
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <p className="text-gray-500 dark:text-gray-400 text-lg">No projects found for this category.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-lg">
+              No projects found for this category.
+            </p>
           </motion.div>
         )}
       </div>
