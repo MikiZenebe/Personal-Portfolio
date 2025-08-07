@@ -22,6 +22,12 @@ import jibruk from "../assets/images/jibruk.png";
 import arif from "../assets/images/arif.png";
 import fittrack from "../assets/images/fittrack.png";
 import tribe from "../assets/images/tribe.png";
+import bookOcean from "../assets/images/mobileBanner.png";
+import owl from "../assets/images/owl.png";
+import sara from "../assets/images/sara.png";
+
+import temkin from "../assets/images/temkin.png";
+import theo from "../assets/images/theo.png";
 
 export const portfolioData = {
   personal: {
@@ -115,68 +121,64 @@ export const portfolioData = {
       image: tribe,
       tech: ["React", "Framer Motion", "Tailwind CSS", "TypeScript"],
       category: "Landing Page",
-      github: "https://github.com/alexthompson/portfolio",
-      live: "https://alexthompson-dev.netlify.app",
-      featured: true,
+      github: "https://github.com/MikiZenebe/Tribe-LandingPage",
+      live: "https://tribe-miki-sass.vercel.app/",
+      featured: false,
     },
     {
       id: 5,
-      title: "Social Media Dashboard",
+      title: "Book Ocean",
       description:
-        "A comprehensive social media management dashboard with analytics, scheduling, and content management features.",
-      image:
-        "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
-      category: "Web App",
-      github: "https://github.com/alexthompson/social-dashboard",
-      live: "https://social-dashboard-demo.netlify.app",
+        "a modern fullstack mobile app that helps you discover, explore, and get personalized book recommendations",
+      image: bookOcean,
+      tech: ["ReactNative", "TypeScript", "Expo", "NodeJs", "MongoDB"],
+      category: "Mobile App",
+      github: "https://github.com/MikiZenebe/Book-Ocean-Mobile-App",
+      live: "",
       featured: false,
     },
     {
       id: 6,
-      title: "Learning Platform",
-      description:
-        "An interactive online learning platform with video streaming, progress tracking, and collaborative features.",
-      image:
-        "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600",
-      tech: ["React", "Redux", "Node.js", "Express", "MongoDB"],
+      title: "Owl Events",
+      description: "An interactive online event managment system.",
+      image: owl,
+      tech: ["React", "Redux", "MUI"],
       category: "Web App",
-      github: "https://github.com/alexthompson/learning-platform",
-      live: "https://learning-platform-demo.netlify.app",
-      featured: false,
+      github: "",
+      live: "https://dev.2.0.portal.owlevents.app/",
+      featured: true,
+    },
+    {
+      id: 7,
+      title: "Sara Events & Marketing",
+      description: "An interactive online event managment system.",
+      image: sara,
+      tech: ["Next.JS", "Tailwind CSS"],
+      category: "Web App",
+      github: "",
+      live: "http://saraeventsandmarketing.com/event",
+      featured: true,
     },
   ],
 
   testimonials: [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Product Manager at TechCorp",
+      name: "Temkin Mengistu",
+      role: "Backend Dev and DevOps",
       content:
-        "Alex delivered exceptional work on our e-commerce platform. His attention to detail and technical expertise made our project a huge success.",
-      avatar:
-        "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100",
-      company: "TechCorp",
+        " I highly recommend Micky Zenebe for his exceptional skills in web development. He transformed my portfolio into something truly remarkable. His talent and attention to detail are evident in every aspect of his work. The website he built for me not only looks stunning but also functions seamlessly across all devices. His ability to bring my vision to  life surpassed my expectations. Working with Micky Zenebe was an absolute pleasure, and I am  incredibly grateful for the  incredible website he created for me.",
+      avatar: temkin,
+      company: "",
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "CEO at StartupXYZ",
+      name: "Teho",
+      role: "Frontend Deloper",
       content:
-        "Working with Alex was a game-changer for our startup. He transformed our ideas into a beautiful, functional web application that exceeded our expectations.",
-      avatar:
-        "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=100",
-      company: "StartupXYZ",
-    },
-    {
-      id: 3,
-      name: "Emily Rodriguez",
-      role: "Design Lead at CreativeCo",
-      content:
-        "Alex has an incredible ability to bring designs to life with pixel-perfect precision. His collaboration skills and technical knowledge are outstanding.",
-      avatar:
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
-      company: "CreativeCo",
+        "   Mikiyas Zenebe is a talented front-end developer and UI designer with a strong passion for learning and improvement. He is always eager to take on new challenges and is always willing to go the extra mile to get the job done. Mikiyas is also a great communicator and is able to clearly explain complex technical concepts to both technical and non-technical audiences. I highly recommend Mikiyas for any front-end development or UI design project",
+      avatar: theo,
+      company: "",
     },
   ],
 };
