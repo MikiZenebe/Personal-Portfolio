@@ -13,6 +13,15 @@ const Hero: React.FC = () => {
     }
   };
 
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf"; // file path in public folder
+    link.download = "Mikiyas-Zenebe.pdf"; // file name on download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section
       id="hero"
@@ -67,7 +76,7 @@ const Hero: React.FC = () => {
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection("projects")}
+              onClick={downloadResume}
               className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-3 rounded-full font-medium text-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300"
             >
               Download My Resume

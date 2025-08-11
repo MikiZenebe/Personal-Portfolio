@@ -35,12 +35,12 @@ export const portfolioData = {
     title: "Frontend Developer",
     tagline:
       "Crafting beautiful, responsive web experiences with modern technologies",
-    bio: "Passionate frontend developer with 4+ years of experience building scalable web applications. I specialize in React, TypeScript, and modern CSS frameworks, with a keen eye for design and user experience.",
-    email: "alex.thompson@example.com",
+    bio: "Passionate frontend developer with 3+ years of experience building scalable web applications. I specialize in React, TypeScript, and modern CSS frameworks, with a keen eye for design and user experience.",
+    email: "mikizenebe10@gmail.com",
     location: "Addis Ababa, Ethiopia",
     social: {
-      github: "https://github.com/alexthompson",
-      linkedin: "https://linkedin.com/in/alexthompson",
+      github: "https://github.com/MikiZenebe",
+      linkedin: "https://www.linkedin.com/in/mikiyas-zenebe-17451b222/",
       twitter: "https://twitter.com/alexthompson",
       dribbble: "https://dribbble.com/alexthompson",
     },

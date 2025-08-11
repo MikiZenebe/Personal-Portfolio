@@ -1,90 +1,52 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
-
-const schema = yup.object({
-  name: yup.string().required('Name is required'),
-  email: yup.string().email('Invalid email').required('Email is required'),
-  subject: yup.string().required('Subject is required'),
-  message: yup.string().required('Message is required').min(20, 'Message must be at least 20 characters')
-});
-
-type FormData = yup.InferType<typeof schema>;
+import React from "react";
+import { motion } from "framer-motion";
+import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { portfolioData } from "../data/portfolioData";
 
 const Contact: React.FC = () => {
   const { personal } = portfolioData;
-  
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset
-  } = useForm<FormData>({
-    resolver: yupResolver(schema)
-  });
-
-  const onSubmit = async (data: FormData) => {
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Create mailto link with form data
-      const subject = encodeURIComponent(data.subject);
-      const body = encodeURIComponent(
-        `Hi Alex,\n\nMy name is ${data.name}.\n\n${data.message}\n\nBest regards,\n${data.name}\n${data.email}`
-      );
-      
-      window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
-      
-      reset();
-      alert('Thank you for your message! Your email client will open with the message pre-filled.');
-    } catch (error) {
-      alert('Something went wrong. Please try again.');
-    }
-  };
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
+      title: "Email",
       detail: personal.email,
-      link: `mailto:${personal.email}`
+      link: `mailto:${personal.email}`,
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: 'Location',
+      title: "Location",
       detail: personal.location,
-      link: null
-    }
+      link: null,
+    },
   ];
 
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      name: 'GitHub',
+      name: "GitHub",
       url: personal.social.github,
-      color: 'hover:text-gray-900'
+      color: "hover:text-gray-900",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      name: 'LinkedIn',
+      name: "LinkedIn",
       url: personal.social.linkedin,
-      color: 'hover:text-blue-600'
+      color: "hover:text-blue-600",
     },
-    {
-      icon: <Twitter className="w-5 h-5" />,
-      name: 'Twitter',
-      url: personal.social.twitter,
-      color: 'hover:text-blue-400'
-    }
+    // {
+    //   icon: <Twitter className="w-5 h-5" />,
+    //   name: 'Twitter',
+    //   url: personal.social.twitter,
+    //   color: 'hover:text-blue-400'
+    // }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section
+      id="contact"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -98,7 +60,8 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you!
+            Have a project in mind or want to collaborate? I'd love to hear from
+            you!
           </p>
         </motion.div>
 
@@ -112,100 +75,22 @@ const Contact: React.FC = () => {
             className="space-y-6"
           >
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send Message</h3>
-              
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Name *
-                    </label>
-                    <input
-                      {...register('name')}
-                      type="text"
-                      id="name"
-                      className={`w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${
-                        errors.name ? 'border-red-300' : 'border-gray-300 dark:border-gray-600 focus:border-blue-500'
-                      }`}
-                      placeholder="Your Name"
-                    />
-                    {errors.name && (
-                      <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-                    )}
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Email *
-                    </label>
-                    <input
-                      {...register('email')}
-                      type="email"
-                      id="email"
-                      className={`w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${
-                        errors.email ? 'border-red-300' : 'border-gray-300 dark:border-gray-600 focus:border-blue-500'
-                      }`}
-                      placeholder="your.email@example.com"
-                    />
-                    {errors.email && (
-                      <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-                    )}
-                  </div>
-                </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                My Location
+              </h3>
 
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Subject *
-                  </label>
-                  <input
-                    {...register('subject')}
-                    type="text"
-                    id="subject"
-                    className={`w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${
-                      errors.subject ? 'border-red-300' : 'border-gray-300 dark:border-gray-600 focus:border-blue-500'
-                    }`}
-                    placeholder="Project Inquiry"
-                  />
-                  {errors.subject && (
-                    <p className="mt-1 text-sm text-red-600">{errors.subject.message}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    {...register('message')}
-                    id="message"
-                    rows={6}
-                    className={`w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${
-                      errors.message ? 'border-red-300' : 'border-gray-300 dark:border-gray-600 focus:border-blue-500'
-                    }`}
-                    placeholder="Tell me about your project..."
-                  />
-                  {errors.message && (
-                    <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
-                  )}
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 py-3 px-6 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <div className="w-5 h-5 border-2 border-white dark:border-gray-900 border-t-transparent rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </motion.button>
-              </form>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  title="Google Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.24434532598!2d38.72768415852002!3d9.030180938754804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f59f678cf1%3A0xa8e394b3e0464c4b!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1711750000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </motion.div>
 
@@ -218,10 +103,13 @@ const Contact: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Get In Touch</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Get In Touch
+              </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you have a question or just want to say hi, feel free to reach out!
+                I'm always interested in new opportunities and exciting
+                projects. Whether you have a question or just want to say hi,
+                feel free to reach out!
               </p>
             </div>
 
@@ -239,7 +127,9 @@ const Contact: React.FC = () => {
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">{item.title}</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h4>
                     {item.link ? (
                       <a
                         href={item.link}
@@ -248,7 +138,9 @@ const Contact: React.FC = () => {
                         {item.detail}
                       </a>
                     ) : (
-                      <p className="text-gray-600 dark:text-gray-300">{item.detail}</p>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {item.detail}
+                      </p>
                     )}
                   </div>
                 </motion.div>
@@ -256,7 +148,9 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Follow Me</h4>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
+                Follow Me
+              </h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a

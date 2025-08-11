@@ -28,8 +28,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 dark:bg-black text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Brand Section */}
+        {/* <div className="grid md:grid-cols-3 gap-8 mb-8">
+    
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+   
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
+   
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,36 +93,16 @@ const Footer: React.FC = () => {
                 {personal.location}
               </p>
             </div>
-            <div className="flex space-x-4 pt-2">
-              <motion.a
-                href={personal.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="text-gray-400 dark:text-gray-500 hover:text-white transition-colors duration-200"
-              >
-                GitHub
-              </motion.a>
-              <motion.a
-                href={personal.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="text-gray-400 dark:text-gray-500 hover:text-blue-400 transition-colors duration-200"
-              >
-                LinkedIn
-              </motion.a>
-            </div>
           </motion.div>
-        </div>
-        {/* Bottom Section
-        <div className="border-t border-gray-800 dark:border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+        </div> */}
+
+        <div className=" pt-8 flex mxaut flex-col md:flex-row justify-between items-center">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-gray-400 dark:text-gray-500 text-sm mb-4 md:mb-0"
+            className="text-gray-400 text-center dark:text-gray-500 text-sm mb-4 md:mb-0"
           >
             © {currentYear} {personal.name}. All rights reserved.
           </motion.p>
@@ -135,7 +115,7 @@ const Footer: React.FC = () => {
           >
             <ArrowUp className="w-5 h-5" />
           </motion.button>
-        </div> */}
+        </div>
       </div>
     </footer>
   );
