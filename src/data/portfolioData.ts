@@ -145,7 +145,7 @@ export const portfolioData = {
       tech: ["React", "Redux", "MUI"],
       category: "Web App",
       github: "",
-      live: "https://dev.2.0.portal.owlevents.app/",
+      live: "https://owlevents.app/organizers",
       featured: true,
     },
     {
