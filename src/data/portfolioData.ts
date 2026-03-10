@@ -18,13 +18,13 @@ import node from "../assets/node.svg";
 import sanity from "../assets/sanity.svg";
 import firebase from "../assets/firebase.svg";
 
-import jibruk from "../assets/images/jibruk.png";
 import arif from "../assets/images/arif.png";
 import fittrack from "../assets/images/fittrack.png";
 import tribe from "../assets/images/tribe.png";
 import bookOcean from "../assets/images/mobileBanner.png";
 import owl from "../assets/images/owl.png";
 import sara from "../assets/images/sara.png";
+import gojo from "../assets/images/gojo-realstate.png";
 
 import temkin from "../assets/images/temkin.png";
 import theo from "../assets/images/theo.png";
@@ -79,15 +79,15 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "Jibruk E-Commerce",
+      title: "Gojo Real-State",
       description:
-        "Jibruk, an e-commerce website that offers a wide selection of trendy shoes and sport materials for sale.",
-      image: jibruk,
+        "A modern real estate platform that makes buying your first home simple and stress-free.",
+      image: gojo,
 
-      tech: ["Next.js", "Sanity CMS", "Tailwind CSS", "Stripe"],
+      tech: ["Next.js", "Sanity CMS", "Tailwind CSS", "Clerk"],
       category: "Web App",
-      github: "https://github.com/MikiZenebe/Jibruk--Ecommerce",
-      live: "https://jibruk-ecommerce.vercel.app/",
+      github: "https://github.com/MikiZenebe/Gojo-RealState",
+      live: "https://gojo-real-state.vercel.app/",
       featured: false,
     },
     {
@@ -159,6 +159,7 @@ export const portfolioData = {
       live: "http://saraeventsandmarketing.com/event",
       featured: true,
     },
+    
   ],
 
   testimonials: [
