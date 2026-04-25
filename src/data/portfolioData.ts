@@ -108,7 +108,7 @@ export const portfolioData = {
       description:
         "A Voter Registration Portal For Ethiopian Election",
       image: nebe,
-      tech: ["React", "TailwindCSS", "RTK", "MongoDB"],
+      tech: ["React", "TailwindCSS", "RTK"],
       category: "Web App",
       github: "https://mirchaye.portal.nebe.org.et/",
       live: "https://mirchaye.portal.nebe.org.et/",
