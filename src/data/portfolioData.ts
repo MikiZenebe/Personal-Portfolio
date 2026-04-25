@@ -25,6 +25,7 @@ import bookOcean from "../assets/images/mobileBanner.png";
 import owl from "../assets/images/owl.png";
 import sara from "../assets/images/sara.png";
 import gojo from "../assets/images/gojo-realstate.png";
+import nebe from "../assets/images/nebe.png";
 
 import temkin from "../assets/images/temkin.png";
 import theo from "../assets/images/theo.png";
@@ -103,15 +104,15 @@ export const portfolioData = {
     },
     {
       id: 3,
-      title: "Fittness Tracker",
+      title: "NEBE Voter Registration",
       description:
-        "A Fitness Tracker, a user can showcase their fitness routine and track their progress.",
-      image: fittrack,
-      tech: ["React.js", "MUI", "Express", "MongoDB"],
+        "A Voter Registration Portal For Ethiopian Election",
+      image: nebe,
+      tech: ["React", "TailwindCSS", "RTK", "MongoDB"],
       category: "Web App",
-      github: "https://github.com/MikiZenebe/Fitness-Tracker",
-      live: "https://miki-fittrack.vercel.app/",
-      featured: false,
+      github: "https://mirchaye.portal.nebe.org.et/",
+      live: "https://mirchaye.portal.nebe.org.et/",
+      featured: true,
     },
     {
       id: 4,
